@@ -54,16 +54,28 @@ If `/.sprite` does not exist, assume normal local development unless the repo st
 1. Decide whether the task is:
    - generating a new site from the scaffold, or
    - iterating on an existing scaffolded site
-2. If generating a new site, run `scripts/create_site.py` against the canonical scaffold GitHub repo.
-3. Use the default pinned scaffold tag unless the user explicitly asks for another ref.
-4. After generation:
+2. If generating a new site, collect the scaffold inputs from the user before running the generator. Do not silently accept defaults for user-facing project choices unless the user explicitly says to use defaults.
+3. Ask for any missing high-impact inputs:
+   - destination directory
+   - site name
+   - project slug
+   - GitHub owner
+   - GitHub repo name if different from the slug
+   - public or private site visibility
+   - Sprite name if different from the slug
+   - whether Google auth should be enabled
+   - allowed Google hosted domain when auth is enabled
+   - whether the UI gallery should be included
+4. If generating a new site, run `scripts/create_site.py` against the canonical scaffold GitHub repo.
+5. Use the default pinned scaffold tag unless the user explicitly asks for another ref.
+6. After generation:
    - copy `.env.example` to `.env` if missing
    - initialize git
    - create an initial commit so `/manifest.json` has git-derived timestamps
    - run `uv sync`
    - run `uv run python manage.py check`
    - run `uv run pytest`
-5. If iterating on an existing site:
+7. If iterating on an existing site:
    - inspect current templates and components first
    - preserve the Django/Sprite/provenance conventions already established by the scaffold
 
@@ -101,6 +113,7 @@ Useful flags:
 ## Notes
 
 - Prefer the pinned scaffold tag for normal use.
+- When creating a new site through Codex, ask the user for missing scaffold parameters in chat before generation.
 - If the user wants to develop the scaffold and skill together, point `--template-source` at a local checkout and use `--vcs-ref HEAD`.
 - Treat scaffold version changes as intentional updates, not silent defaults.
 - When changing frontend pages in scaffolded sites, consult the component system before designing new structures from scratch.
