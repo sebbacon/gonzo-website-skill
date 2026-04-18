@@ -1,6 +1,6 @@
 ---
 name: gonzo-site-from-scaffold
-description: Create or extend a website based on the Gonzo Copier scaffold on GitHub. Use when the user wants a fresh Gonzo website generated from the canonical template, or wants to iterate on a site that follows this baseline: Django, SQLite, optional Google OAuth, sprync-based Sprite sync, and a shared visual component library.
+description: "Create or extend a website based on the Gonzo Copier scaffold on GitHub. Use when the user wants a fresh Gonzo website generated from the canonical template, or wants to iterate on a site that follows this baseline: Django, SQLite, optional Google OAuth, sprync-based Sprite sync, and a shared visual component library."
 ---
 
 # Gonzo Site From Scaffold
