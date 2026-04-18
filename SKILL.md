@@ -75,7 +75,11 @@ If `/.sprite` does not exist, assume normal local development unless the repo st
    - run `uv sync`
    - run `uv run python manage.py check`
    - run `uv run pytest`
-7. If iterating on an existing site:
+7. After the first deploy of a scaffolded site:
+   - start it properly as a Sprite HTTP service
+   - inspect the Sprite URL configuration
+   - give the user the access URL for the deployed site
+8. If iterating on an existing site:
    - inspect current templates and components first
    - preserve the Django/Sprite/provenance conventions already established by the scaffold
 
@@ -136,3 +140,4 @@ Useful flags:
 - If the user wants to develop the scaffold and skill together, point `--template-source` at a local checkout and use `--vcs-ref HEAD`.
 - Treat scaffold version changes as intentional updates, not silent defaults.
 - When changing frontend pages in scaffolded sites, consult the component system before designing new structures from scratch.
+- After the first Sprite deploy, ensure the app is actually running as a Sprite HTTP service and report the access URL back to the user.
