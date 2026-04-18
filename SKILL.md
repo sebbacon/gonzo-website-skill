@@ -103,6 +103,8 @@ After that, both `uv` and `uvx` should be available on the path.
 
 If `gh` is missing, install GitHub CLI before relying on GitHub-side workflows in this skill.
 
+If `gh` is installed but not authenticated, prompt the user to log in with GitHub CLI before continuing with GitHub-dependent steps.
+
 ## Command
 
 ```bash
