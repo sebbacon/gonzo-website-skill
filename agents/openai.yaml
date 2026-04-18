@@ -1,4 +1,4 @@
 skill:
   display_name: Gonzo Site Scaffold
-  short_description: Generate a new Gonzo website from the pinned Copier scaffold.
-  default_prompt: Create a new Gonzo website project from the scaffold, initialize it, and verify it.
+  short_description: Generate or extend a Django Gonzo site with Sprite sync and shared components.
+  default_prompt: Create or iterate on a Gonzo scaffolded website, using the shared component system and Sprite-aware workflow where appropriate.
