@@ -86,6 +86,18 @@ If `/.sprite` does not exist, assume normal local development unless the repo st
 
 Override with `--template-source`, `--vcs-ref`, or env vars only for development or explicit user requests.
 
+## Prerequisites
+
+This skill expects `uv` and `uvx` to be available for scaffold generation and project verification.
+
+If they are missing, install them first. One supported route is:
+
+```bash
+pip install uv
+```
+
+After that, both `uv` and `uvx` should be available on the path.
+
 ## Command
 
 ```bash
