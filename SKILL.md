@@ -88,15 +88,20 @@ Override with `--template-source`, `--vcs-ref`, or env vars only for development
 
 ## Prerequisites
 
-This skill expects `uv` and `uvx` to be available for scaffold generation and project verification.
+This skill expects these tools to be available:
 
-If they are missing, install them first. One supported route is:
+- `uv` and `uvx` for scaffold generation and project verification
+- `gh` for GitHub repository creation, inspection, pull request work, and GitHub Actions debugging
+
+If `uv` is missing, install it first. One supported route is:
 
 ```bash
 pip install uv
 ```
 
 After that, both `uv` and `uvx` should be available on the path.
+
+If `gh` is missing, install GitHub CLI before relying on GitHub-side workflows in this skill.
 
 ## Command
 
